@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2019-09-14T13:29:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Marksheet" pageWidth="595" pageHeight="842" columnWidth="555" columnSpacing="4" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="2" uuid="d5793cd3-4bed-4ee6-8407-ff9d5be0548a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="adapter1"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[select rollno ,name ,physics ,chemistry ,maths, physics+chemistry+maths as total ,round((physics+chemistry+maths)/3,2) as percentage from marksheetdto order by total desc limit 0,10;]]>
+	</queryString>
+	<field name="rollno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="physics" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chemistry" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="maths" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Long"/>
+	<field name="percentage" class="java.math.BigDecimal"/>
+	<sortField name="rollno" order="Descending"/>
+	<sortField name="name" order="Descending"/>
+	<sortField name="physics" order="Descending"/>
+	<sortField name="chemistry" order="Descending"/>
+	<sortField name="maths" order="Descending"/>
+	<sortField name="total" order="Descending"/>
+	<sortField name="percentage" order="Descending"/>
+	<variable name="percentage_SUM" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{percentage}]]></variableExpression>
+	</variable>
+	<group name="rollno">
+		<groupExpression><![CDATA[$F{rollno}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="physics">
+		<groupExpression><![CDATA[$F{physics}]]></groupExpression>
+	</group>
+	<group name="chemistry">
+		<groupExpression><![CDATA[$F{chemistry}]]></groupExpression>
+	</group>
+	<group name="maths">
+		<groupExpression><![CDATA[$F{maths}]]></groupExpression>
+	</group>
+	<group name="total">
+		<groupExpression><![CDATA[$F{total}]]></groupExpression>
+	</group>
+	<group name="percentage">
+		<groupExpression><![CDATA[$F{percentage}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="3" width="595" height="56" backcolor="#CAFAEA" uuid="5891bc4b-56cd-4306-8029-6a72ac449df7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marksheet Merit List]]></text>
+			</staticText>
+			<textField pattern="MMMM d, yyyy">
+				<reportElement x="460" y="63" width="100" height="30" uuid="7e501c67-4a78-4ccf-8b11-f8bfefea4c5c"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="407" y="62" width="48" height="30" uuid="c6c5eeab-01a9-4bc8-8996-540374e6ab23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="3" width="70" height="30" backcolor="#F2C7C7" uuid="2d79d006-ebeb-40b3-9c9e-7f12e2608b95"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[RollNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="50" y="3" width="130" height="30" backcolor="#F2C7C7" uuid="d7a88086-c48c-484a-8894-2356784b3dcb"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Student Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="260" y="3" width="78" height="30" backcolor="#F2C7C7" uuid="41de3de4-883a-4f3a-8a28-20b62d2bd182"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Chemistry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="338" y="3" width="69" height="30" backcolor="#F2C7C7" uuid="b77de569-7182-476e-9af8-a4ac90ca095a"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Maths]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="407" y="3" width="70" height="30" backcolor="#F2C7C7" uuid="021d884b-cc9c-4553-9b72-0013d6bf7c22"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="477" y="3" width="98" height="30" backcolor="#F2C7C7" uuid="e88a4a43-d6d8-45a9-a280-24e47176b1a5"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="3" width="80" height="30" backcolor="#F2C7C7" uuid="08c82b1d-e092-4c2f-ba91-fe0830b9c5e7"/>
+				<box>
+					<topPen lineColor="#F2C7C7"/>
+					<leftPen lineColor="#F2C7C7"/>
+					<bottomPen lineColor="#F2C7C7"/>
+					<rightPen lineColor="#F2C7C7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Physics]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="7" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<image>
+				<reportElement x="550" y="10" width="10" height="20" uuid="831df9cc-0314-4779-83f7-8cadc554e057"/>
+				<imageExpression><![CDATA["C:/Users/pradeep/Desktop/percent-symbol-pngrepo-com.png"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement x="50" y="0" width="130" height="30" uuid="5ca09dcf-0220-4bd0-8775-3de209ac24da"/>
+				<textField>
+					<reportElement x="0" y="0" width="130" height="30" uuid="016b620e-7fc1-4295-bedb-3157a3844cdc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="180" y="0" width="80" height="30" uuid="07ebd9eb-758f-4aed-b95a-586610a1265b"/>
+				<textField>
+					<reportElement x="0" y="0" width="80" height="30" uuid="90c4f206-0bbb-47ec-bf1d-e46b42fe128c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{physics}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="260" y="0" width="78" height="30" uuid="823a3926-f760-4765-9175-975135da6b44"/>
+				<textField>
+					<reportElement x="0" y="0" width="78" height="30" uuid="01214b49-fbff-4ddb-a014-030248e93f67"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{chemistry}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="340" y="0" width="69" height="30" uuid="e76aa03c-d343-4615-9f53-b6b05f5bb3de"/>
+				<textField>
+					<reportElement x="0" y="0" width="69" height="30" uuid="d2361736-0719-4ae0-9751-2766322b7ba8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{maths}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="407" y="0" width="70" height="30" uuid="7dfbf847-37b7-48a4-9b0a-03e7c1f4700d"/>
+				<textField>
+					<reportElement x="0" y="0" width="70" height="30" uuid="a323e213-40eb-48ba-a534-eacfb472e562"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="480" y="0" width="80" height="30" uuid="5ff446a2-c142-473a-afc1-f4caba4f9812"/>
+				<textField>
+					<reportElement x="0" y="0" width="80" height="30" uuid="55183043-6e35-4bc7-9a2d-eb95d90bf44a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{percentage}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="-20" y="0" width="70" height="30" uuid="269917f5-ec43-4092-b824-3093a5ca3819">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="70" height="30" uuid="ea545101-b72d-4966-a62b-9ebc8ac79883">
+						<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rollno}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="82" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="134" splitType="Stretch"/>
+	</summary>
+</jasperReport>

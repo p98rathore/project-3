@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2019 12:13:16 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.dto.FacultyDTO" >
+       <id name="id" type="long">
+       <column name="ID"></column>
+       <generator class="increment"></generator>
+       </id>
+        <property name="firstName" length="50" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+       
+        <property name="lastName" length="50" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        <property name="gender" length="50" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="mobileNo" length="50" type="java.lang.String">
+            <column name="MOBILENO" />
+        </property>
+         <property name="dob" length="50" type="java.util.Date">
+            <column name="DOB" />
+        </property>
+          <property name="qualification" length="50" type="java.lang.String">
+            <column name="QUALIFICATION" />
+        </property>
+        
+        <property name="collegeName" length="50" type="java.lang.String">
+            <column name="COLLEGENAME" />
+        </property>
+        
+        <property name="collegeId" length="50" type="long">
+            <column name="COLLEGEID" />
+        </property>
+        <property name="courseName" length="50" type="java.lang.String">
+            <column name="COURSENAME" />
+        </property>
+       
+        <property name="courseId" length="50" type="long">
+            <column name="COURSEID" />
+        </property>
+        <property name="email" length="50" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="subjectName" length="50" type="java.lang.String">
+            <column name="SUBJECTNAME" />
+        </property>
+        <property name="subjectId" length="50" type="long">
+            <column name="SUBJECTID" />
+        </property>
+      
+     <property name="createdBy" type="java.lang.String" length="50">
+            <column name="CREATED_BY" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String" length="50">
+            <column name="MODIFIED_BY" />
+        </property>
+        <property name="createdDatetime" length="50" type="java.sql.Timestamp">
+            <column name="CREATED_DATETIME" />
+        </property>
+        <property name="modifiedDatetime" length="50" type="java.sql.Timestamp">
+            <column name="MODIFIED_DATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

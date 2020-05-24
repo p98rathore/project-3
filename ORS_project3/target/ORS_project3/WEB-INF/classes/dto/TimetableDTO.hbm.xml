@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2019 12:27:21 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.dto.TimetableDTO">
+    <id name="id" type="long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="subId" length="50" type="long">
+            <column name="SUBID" />
+        </property>
+         <property name="subName" length="50" type="java.lang.String">
+            <column name="SUBNAME" />
+        </property>
+       <property name="courseId" length="50" type="long">
+            <column name="COURSEID" />
+        </property>
+   
+        <property name="courseName" length="50" type="java.lang.String">
+            <column name="COURSENAME" />
+        </property>
+         <property name="semester" length="50" type="java.lang.String">
+            <column name="SEMESTER" />
+        </property>
+        <property name="examDate" length="50" type="java.util.Date">
+            <column name="EXAMDATE" />
+        </property>
+        
+        <property name="examTime" length="50" type="java.lang.String">
+            <column name="EXAMTIME" />
+        </property>
+       
+        <property name="description" length="50" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+         <property name="createdBy" type="java.lang.String" length="50">
+            <column name="CREATED_BY" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String" length="50">
+            <column name="MODIFIED_BY" />
+        </property>
+        <property name="createdDatetime" length="50" type="java.sql.Timestamp">
+            <column name="CREATED_DATETIME" />
+        </property>
+        <property name="modifiedDatetime" length="50" type="java.sql.Timestamp">
+            <column name="MODIFIED_DATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>
